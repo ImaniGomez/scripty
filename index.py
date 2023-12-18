@@ -160,7 +160,7 @@ calculate()
 
 
 
-#ALGORITHM: 
+#Steps: 
 
 #ask for film format
 #ask for frame rate
