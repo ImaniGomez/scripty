@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripty</title>
+    <link rel="stylesheet" type = "text/css" href="/css/main.css">
+</head>
+<body>
+
+<h3>Insert project name and day here</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Roll</th>
+                <th>Shot</th>
+                <th>Take</th>
+                <th>FPS</th>
+                <th>Runtime</th>
+                <th>Film Left</th>
+                <th>Time Left</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each filmShots}}
+            <tr>
+                <td contenteditable="true">{{this.rollNum}}</td> <td contenteditable="true">{{this.shotNum}}</td><td contenteditable="true">{{this.cam_fps}}</td><td contenteditable="true">{{this.cam_fps}}</td><td contenteditable="true">{{this.runtime}}</td><td contenteditable="true">{{this.FPS}}</td><td contenteditable="true">{{this.filmLength}}</td><td contenteditable="true">{{this.frames}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <button id="addRowButton">Add Row</button>
+
+    <script>
+        document.getElementById("addRowButton").addEventListener("click", function(){
+            let table = document.getElementById("editableTable").getElementsByTagName("tbody")[0];
+            
+        })
+    </script>
+
+</body>
+</html>

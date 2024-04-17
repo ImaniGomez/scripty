@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="/css/main.css">
+    <title>{{project.title}}</title>
+</head>
+<body>
+    <h1>New Project Created: {{projectTitle}}</h1>
+    <button id="back-project-button">Back to Projects</button>
+    <h3>Add Daily Progress to {{projectTitle}} Project</h3>
+    <form action="/day" method="POST">
+        <button id="new-day-button">+ new day</button>
+    </form>
+    
+    <hr>
+
+{{#each project.days}}
+<h2>Project Info</h2>
+<p>project settings</p>
+<h3>Film Types</h3>
+<h3>shooting days</h3>
+<h3>Average film Usage (per day)</h3>
+<h3>Average takes per shot</h3>
+{{/each}}
+
+
+
+<script>
+    document.getElementById('back-project-button').addEventListener('click', async() => {
+        
+        try{
+            const response = await fetch('/home', {
+                method: 'GET',
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            })
+            if(response.ok){
+                window.location.href='/home';
+            }
+
+        }catch(error){
+            console.error('Failed to go home:',error);
+        }
+    });
+
+
+    document.getElementById('new-day-button').addEventListener('click', async() => {
+        
+        try{
+            const response = await fetch('/filmData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            })
+            if(response.ok){
+                window.location.href='/filmData';
+            }
+
+        }catch(error){
+            console.error('Failed to go home:',error);
+        }
+    });
+
+</script>
+
+    <!-- Add more project details here as needed -->
+</body>
+</html>

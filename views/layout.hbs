@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripty</title>
+    
+    <link rel="stylesheet" type = "text/css" href="/css/main.css">
+
+
+</head>
+<body>
+    <header>
+        <div class="head">
+            <h1 class="logo">SCRIPTY</h1>
+            {{#if username}}
+            <h2>Welcome, {{username}}</h2>
+            {{/if}}
+            <nav>
+                <ul class="navbar">
+                    <button type="submit"><a href="/home">HOME</a></button>
+                    {{#if username}}
+                    <button type="submit"><a href="/account">ACCOUNT</a></button>
+                    {{else}}
+                    <button type="submit"><a href="/account">LOGIN</a></button>
+                    {{/if}}
+                </ul>
+            </nav>
+        </div>
+    
+</header>
+
+
+{{#if user}}
+    Hello, {{user.username}}
+{{/if}}
+{{{body}}}
+
+</body>
+</html>

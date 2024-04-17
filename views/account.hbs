@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripty</title>
+    <link rel="stylesheet" type = "text/css" href="/css/main.css">
+</head>
+<body>
+
+
+<div class="account-info">
+    <h3> account info</h3>
+    {{#if accountInfo}}
+    <h2>Username: {{accountInfo.userName}}</h2>
+    <h2>Password: Click to view</h2>
+    {{else}}
+    <button type="submit"><a href='/register'>Register</a></button>
+    <button type="submit"><a href='/login'>Login</a></button>
+    {{/if}}
+</div>
+</body>

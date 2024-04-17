@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripty</title>
+    <link rel="stylesheet" type = "text/css" href="/css/main.css">
+</head>
+<body>
+    <h3>Projects</h3>
+
+
+
+<div class="project-overview">
+    <h3>Create a New Project</h3>
+    <form action="/projects" method="POST">
+        Project Name: <input type="text" name="projectName" required="required"><br>
+         <input type="submit" value="Create New Project">
+    </form>
+    {{#if proj-allshown}}
+      <p>Show Less</p>
+    {{/if}}
+    {{#if proj-minshown}}
+      <p>Show More</p>
+    {{/if}}
+
+    <hr>
+  <ul>
+    {{#each projects}}
+        <div class="projBox">
+        <li><a href = "/projects/{{this._id}}">{{this.name}}</a></li>
+        </div>
+    {{/each}}
+  </ul>
+</div>
+
+</body>
